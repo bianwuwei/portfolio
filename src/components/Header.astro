@@ -1,0 +1,102 @@
+---
+const base = import.meta.env.BASE_URL;
+const links = [
+	{ href: '#about', label: '关于' },
+	{ href: '#works', label: '作品' },
+	{ href: '#skills', label: '能力' },
+	{ href: '#contact', label: '联系' },
+];
+---
+
+<header class="header">
+	<div class="container header-inner">
+		<a class="logo" href={base}>
+			<span class="logo-mark" aria-hidden="true">W</span>
+			<span class="logo-text">吴小为 <em>Wei Wu</em></span>
+		</a>
+		<nav class="nav" aria-label="主导航">
+			{
+				links.map((link) => (
+					<a href={link.href}>{link.label}</a>
+				))
+			}
+		</nav>
+		<a class="button button-ghost header-cta" href="#contact">聊聊合作</a>
+	</div>
+</header>
+
+<style>
+	.header {
+		position: sticky;
+		top: 0;
+		z-index: 50;
+		backdrop-filter: blur(14px);
+		background: rgba(11, 13, 16, 0.72);
+		border-bottom: 1px solid var(--border);
+	}
+
+	.header-inner {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1rem;
+		min-height: 4rem;
+	}
+
+	.logo {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.7rem;
+		font-weight: 700;
+	}
+
+	.logo-mark {
+		display: grid;
+		place-items: center;
+		width: 2rem;
+		height: 2rem;
+		border-radius: 0.65rem;
+		background: linear-gradient(135deg, var(--accent), #ff7a18);
+		color: #1a1205;
+		font-weight: 800;
+	}
+
+	.logo-text em {
+		margin-left: 0.35rem;
+		font-style: normal;
+		font-weight: 500;
+		color: var(--text-muted);
+		font-size: 0.85em;
+	}
+
+	.nav {
+		display: none;
+		gap: 1.25rem;
+	}
+
+	.nav a {
+		color: var(--text-muted);
+		font-size: 0.95rem;
+		font-weight: 500;
+	}
+
+	.nav a:hover {
+		color: var(--accent-strong);
+	}
+
+	.header-cta {
+		display: none;
+		padding: 0.55rem 0.95rem;
+		font-size: 0.9rem;
+	}
+
+	@media (min-width: 800px) {
+		.nav {
+			display: flex;
+		}
+
+		.header-cta {
+			display: inline-flex;
+		}
+	}
+</style>

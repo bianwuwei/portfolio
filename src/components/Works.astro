@@ -1,0 +1,93 @@
+---
+const projects = [
+	{
+		title: '协作看板 Pro',
+		description: '面向中小团队的任务与进度可视化工具，强调轻量排期与清晰的责任边界，帮助异步协作更少开会。',
+		tags: ['产品规划', 'B2B SaaS', '用户研究'],
+		link: 'https://github.com/bianwuwei',
+		linkLabel: 'GitHub',
+	},
+	{
+		title: '洞察笔记',
+		description: '把用户访谈与竞品观察沉淀成可检索的知识库，支持标签、结论摘要与评审材料一键导出。',
+		tags: ['信息架构', '内容产品', '设计系统'],
+		link: 'https://github.com/bianwuwei',
+		linkLabel: '项目主页',
+	},
+	{
+		title: '发布节奏台',
+		description: '连接需求、设计与发布清单的内部工作台，减少跨职能沟通损耗，让每个版本都有清晰的「完成定义」。',
+		tags: ['内部工具', '流程设计', '交付落地'],
+		link: 'https://github.com/bianwuwei',
+		linkLabel: '查看仓库',
+	},
+];
+---
+
+<section class="section" id="works">
+	<div class="container">
+		<p class="section-label">精选作品</p>
+		<h2 class="section-title">近期在做 / 做过的事</h2>
+		<p class="section-lead">
+			以下为占位项目，用于展示作品结构与叙事方式。真实案例可替换为产品截图、指标与复盘链接。
+		</p>
+		<div class="grid-3 works">
+			{
+				projects.map((project) => (
+					<article class="card work-card">
+						<div class="work-top">
+							<h3>{project.title}</h3>
+							<a class="work-link" href={project.link} target="_blank" rel="noopener noreferrer">
+								{project.linkLabel} →
+							</a>
+						</div>
+						<p>{project.description}</p>
+						<ul class="tag-list">
+							{project.tags.map((tag) => (
+								<li class="tag">{tag}</li>
+							))}
+						</ul>
+					</article>
+				))
+			}
+		</div>
+	</div>
+</section>
+
+<style>
+	.works {
+		margin-top: 2rem;
+	}
+
+	.work-card {
+		display: flex;
+		flex-direction: column;
+		min-height: 100%;
+	}
+
+	.work-top {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		gap: 0.75rem;
+		margin-bottom: 0.7rem;
+	}
+
+	.work-card h3 {
+		margin: 0;
+		font-size: 1.2rem;
+	}
+
+	.work-link {
+		flex-shrink: 0;
+		color: var(--accent-strong);
+		font-size: 0.88rem;
+		font-weight: 600;
+	}
+
+	.work-card > p {
+		margin: 0;
+		color: var(--text-muted);
+		flex: 1;
+	}
+</style>

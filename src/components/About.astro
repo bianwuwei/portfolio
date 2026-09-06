@@ -1,0 +1,57 @@
+---
+---
+
+<section class="section" id="about">
+	<div class="container about-grid">
+		<div>
+			<p class="section-label">关于我</p>
+			<h2 class="section-title">用产品思维连接用户与团队</h2>
+			<p class="section-lead">
+				我是吴小为（Wei Wu），一名偏执行与落地的产品人。日常工作从用户访谈、竞品拆解，到需求排期、方案对齐与版本复盘。我相信好产品不是一次完美的设计稿，而是持续验证与迭代的结果。
+			</p>
+		</div>
+		<div class="about-points">
+			<article class="card">
+				<h3>问题优先</h3>
+				<p>先把「为谁解决什么问题」说清楚，再谈功能与界面，避免过早陷入方案细节。</p>
+			</article>
+			<article class="card">
+				<h3>可交付的路线图</h3>
+				<p>把愿景拆成可验证的里程碑，明确取舍，让设计与研发在同一张地图上推进。</p>
+			</article>
+			<article class="card">
+				<h3>闭环反馈</h3>
+				<p>上线不是终点。通过数据与用户反馈快速迭代，把学习沉淀进下一轮决策。</p>
+			</article>
+		</div>
+	</div>
+</section>
+
+<style>
+	.about-grid {
+		display: grid;
+		gap: 2rem;
+	}
+
+	.about-points {
+		display: grid;
+		gap: 1rem;
+	}
+
+	@media (min-width: 800px) {
+		.about-points {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+
+	.card h3 {
+		margin: 0 0 0.55rem;
+		font-size: 1.1rem;
+	}
+
+	.card p {
+		margin: 0;
+		color: var(--text-muted);
+		font-size: 0.98rem;
+	}
+</style>

@@ -1,0 +1,58 @@
+---
+---
+
+<section class="section" id="contact">
+	<div class="container">
+		<div class="contact-panel">
+			<div>
+				<p class="section-label">联系</p>
+				<h2 class="section-title">有想法？欢迎一起聊聊</h2>
+				<p class="section-lead">
+					欢迎就产品合作、咨询或交流来信。当前邮箱为占位地址，后续可替换为真实联系方式。
+				</p>
+			</div>
+			<div class="contact-actions">
+				<a class="button" href="mailto:hello@example.com">hello@example.com</a>
+				<a
+					class="button button-ghost"
+					href="https://github.com/bianwuwei"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					GitHub · bianwuwei
+				</a>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	.contact-panel {
+		display: grid;
+		gap: 1.5rem;
+		padding: clamp(1.5rem, 4vw, 2.4rem);
+		border-radius: calc(var(--radius) + 6px);
+		border: 1px solid rgba(245, 165, 36, 0.28);
+		background:
+			linear-gradient(135deg, rgba(245, 165, 36, 0.14), transparent 50%),
+			var(--bg-elevated);
+		box-shadow: var(--shadow);
+	}
+
+	@media (min-width: 800px) {
+		.contact-panel {
+			grid-template-columns: 1.4fr 1fr;
+			align-items: center;
+		}
+	}
+
+	.contact-actions {
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+	}
+
+	.contact-actions .button {
+		width: 100%;
+	}
+</style>

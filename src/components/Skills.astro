@@ -1,0 +1,74 @@
+---
+const skills = [
+	{
+		title: '产品设计',
+		items: ['用户旅程与场景拆解', '信息架构与交互草案', '原型验证与可用性观察'],
+	},
+	{
+		title: '路线与优先级',
+		items: ['目标拆解与里程碑', '价值 / 成本取舍', '跨团队对齐与共识'],
+	},
+	{
+		title: '交付与运营',
+		items: ['版本节奏与发布清单', '数据埋点与复盘', '文档沉淀与知识传承'],
+	},
+	{
+		title: '协作方式',
+		items: ['与设计 / 研发结对', '清晰的验收标准', '异步沟通与透明进度'],
+	},
+];
+---
+
+<section class="section" id="skills">
+	<div class="container">
+		<p class="section-label">能力与关注</p>
+		<h2 class="section-title">我能带来的价值</h2>
+		<p class="section-lead">
+			不追求「全能」，而是在产品链路里把关键节点做扎实：定义问题、排清优先级、推动上线、从反馈中学习。
+		</p>
+		<div class="skills-grid">
+			{
+				skills.map((skill) => (
+					<article class="card">
+						<h3>{skill.title}</h3>
+						<ul>
+							{skill.items.map((item) => (
+								<li>{item}</li>
+							))}
+						</ul>
+					</article>
+				))
+			}
+		</div>
+	</div>
+</section>
+
+<style>
+	.skills-grid {
+		display: grid;
+		gap: 1rem;
+		margin-top: 2rem;
+	}
+
+	@media (min-width: 720px) {
+		.skills-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	.card h3 {
+		margin: 0 0 0.85rem;
+		font-size: 1.15rem;
+		color: var(--accent-strong);
+	}
+
+	.card ul {
+		margin: 0;
+		padding-left: 1.1rem;
+		color: var(--text-muted);
+	}
+
+	.card li + li {
+		margin-top: 0.4rem;
+	}
+</style>
