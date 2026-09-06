@@ -3,56 +3,70 @@
 
 <section class="section" id="contact">
 	<div class="container">
-		<div class="contact-panel">
-			<div>
-				<p class="section-label">联系</p>
-				<h2 class="section-title">一起做点有意思的东西</h2>
-				<p class="section-lead">
-					合作、开源讨论，或只是打个招呼——欢迎邮件或在 GitHub 找我。Get in touch.
-				</p>
-			</div>
-			<div class="contact-actions">
-				<a class="button" href="mailto:luwuwei328@gmail.com">luwuwei328@gmail.com</a>
-				<a
-					class="button button-ghost"
-					href="https://github.com/bianwuwei"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					GitHub · bianwuwei
-				</a>
-			</div>
+		<div class="contact">
+			<p class="section-label" data-i18n="contact.label">联系</p>
+			<h2 class="section-title" data-i18n="contact.title">联系</h2>
+			<p class="section-lead" data-i18n="contact.lead">欢迎聊实际问题。邮件优先，也可加微信。</p>
+			<ul class="contact-list">
+				<li>
+					<span class="contact-k" data-i18n="contact.email">邮箱</span>
+					<a href="mailto:luwuwei328@gmail.com">luwuwei328@gmail.com</a>
+				</li>
+				<li>
+					<span class="contact-k" data-i18n="contact.wechat">微信</span>
+					<span>13811947595</span>
+				</li>
+				<li>
+					<span class="contact-k" data-i18n="contact.github">GitHub</span>
+					<a href="https://github.com/bianwuwei" target="_blank" rel="noopener noreferrer">@bianwuwei</a>
+				</li>
+			</ul>
 		</div>
 	</div>
 </section>
 
 <style>
-	.contact-panel {
+	.contact {
+		max-width: 40rem;
+		padding-top: 0.25rem;
+	}
+
+	.contact-list {
+		list-style: none;
+		margin: 1.75rem 0 0;
+		padding: 0;
 		display: grid;
-		gap: 1.5rem;
-		padding: clamp(1.5rem, 4vw, 2.4rem);
-		border-radius: calc(var(--radius) + 6px);
-		border: 1px solid rgba(245, 165, 36, 0.28);
-		background:
-			linear-gradient(135deg, rgba(245, 165, 36, 0.14), transparent 50%),
-			var(--bg-elevated);
-		box-shadow: var(--shadow);
+		gap: 0.95rem;
 	}
 
-	@media (min-width: 800px) {
-		.contact-panel {
-			grid-template-columns: 1.4fr 1fr;
-			align-items: center;
-		}
+	.contact-list li {
+		display: grid;
+		gap: 0.2rem;
+		padding-bottom: 0.95rem;
+		border-bottom: 1px solid var(--border);
 	}
 
-	.contact-actions {
-		display: flex;
-		flex-direction: column;
-		gap: 0.75rem;
+	.contact-k {
+		font-family: var(--font-mono);
+		font-size: 0.75rem;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		color: var(--text-muted);
 	}
 
-	.contact-actions .button {
-		width: 100%;
+	.contact-list a {
+		color: var(--accent-strong);
+		font-weight: 600;
+		font-size: 1.05rem;
+		width: fit-content;
+	}
+
+	.contact-list a:hover {
+		text-decoration: underline;
+	}
+
+	.contact-list span:not(.contact-k) {
+		font-size: 1.05rem;
+		font-weight: 600;
 	}
 </style>

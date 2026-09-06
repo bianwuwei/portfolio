@@ -2,65 +2,24 @@
 ---
 
 <section class="section" id="about">
-	<div class="container about-grid">
-		<div>
-			<p class="section-label">关于我</p>
-			<h2 class="section-title">重新出发：做自己的产品与开源</h2>
-			<p class="section-lead">
-				我是無為（Wu Wei），GitHub <a href="https://github.com/bianwuwei" target="_blank" rel="noopener noreferrer">@bianwuwei</a>。正在开启一条独立开发路径：在公开仓库里学习、迭代，把个人产品与开源项目真正交付出去。曾在企业侧做过 AI 落地相关工作；现在更关注自己动手做、小步上线、与社区协作。
-			</p>
-		</div>
-		<div class="about-points">
-			<article class="card">
-				<h3>公开交付</h3>
-				<p>软件优先落在 GitHub：文档、issue 与版本节奏可见，方便别人复用与反馈。</p>
-			</article>
-			<article class="card">
-				<h3>边做边学</h3>
-				<p>不追求一次完美。用小版本验证假设，把踩坑与改进写进仓库，学习过程本身也是产品。</p>
-			</article>
-			<article class="card">
-				<h3>独立创业</h3>
-				<p>未来个人产品与工具会陆续出现在这个账号下——从想法到可安装、可使用的软件。</p>
-			</article>
-		</div>
+	<div class="container about">
+		<p class="section-label" data-i18n="about.label">关于</p>
+		<h2 class="section-title" data-i18n="about.title">关于</h2>
+		<p class="about-body" data-i18n="about.body">
+			我有 AI 视觉检测的实践经验。现在把对业务问题的理解，带到自己的软件与工具创作里——从实际问题出发，做出有用的东西。
+		</p>
 	</div>
 </section>
 
 <style>
-	.about-grid {
-		display: grid;
-		gap: 2rem;
+	.about {
+		max-width: 40rem;
 	}
 
-	.about-points {
-		display: grid;
-		gap: 1rem;
-	}
-
-	@media (min-width: 800px) {
-		.about-points {
-			grid-template-columns: repeat(3, 1fr);
-		}
-	}
-
-	.section-lead a {
-		color: var(--accent-strong);
-		font-weight: 600;
-	}
-
-	.section-lead a:hover {
-		text-decoration: underline;
-	}
-
-	.card h3 {
-		margin: 0 0 0.55rem;
-		font-size: 1.1rem;
-	}
-
-	.card p {
+	.about-body {
 		margin: 0;
 		color: var(--text-muted);
-		font-size: 0.98rem;
+		font-size: 1.08rem;
+		line-height: 1.75;
 	}
 </style>

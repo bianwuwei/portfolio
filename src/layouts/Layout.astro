@@ -5,8 +5,8 @@ interface Props {
 }
 
 const {
-	title = '無為 · Wu Wei — Builder & Open Source',
-	description = '無為（Wu Wei / bianwuwei）的个人站点：独立开发、开源与个人产品，在 GitHub 上公开交付。',
+	title = '無為 · Wu Wei',
+	description = 'Useful software, grounded in real problems. AI vision experience → personal tools.',
 } = Astro.props;
 const base = import.meta.env.BASE_URL;
 ---
@@ -32,9 +32,126 @@ const base = import.meta.env.BASE_URL;
 		/>
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<script is:inline>
+			(function () {
+				try {
+					var lang = localStorage.getItem('ww-lang');
+					if (lang === 'en' || lang === 'zh') {
+						document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+						document.documentElement.dataset.lang = lang;
+					} else {
+						document.documentElement.dataset.lang = 'zh';
+					}
+				} catch (e) {
+					document.documentElement.dataset.lang = 'zh';
+				}
+			})();
+		</script>
 	</head>
 	<body>
 		<slot />
+		<script is:inline>
+			(function () {
+				var dict = {
+					zh: {
+						'nav.works': '作品',
+						'nav.about': '关于',
+						'nav.contact': '联系',
+						'nav.lang.zh': '中文',
+						'nav.lang.en': 'EN',
+						'hero.name': '無為 · Wu Wei',
+						'hero.pitch': '从实际问题出发，做有用的软件。',
+						'hero.bio':
+							'我有 AI 视觉检测的实践经验，正在把对业务问题的理解，带进自己的软件和工具创作中。',
+						'hero.cta.primary': '聊聊你遇到的问题',
+						'hero.cta.secondary': '了解我的经历',
+						'hero.visual.caption': '無為 / WU WEI',
+						'works.label': '作品',
+						'works.title': '作品',
+						'works.note': '后续作品会在这里发布',
+						'about.label': '关于',
+						'about.title': '关于',
+						'about.body':
+							'我有 AI 视觉检测的实践经验。现在把对业务问题的理解，带到自己的软件与工具创作里——从实际问题出发，做出有用的东西。',
+						'contact.label': '联系',
+						'contact.title': '联系',
+						'contact.lead': '欢迎聊实际问题。邮件优先，也可加微信。',
+						'contact.email': '邮箱',
+						'contact.wechat': '微信',
+						'contact.github': 'GitHub',
+						'footer.top': '回到顶部',
+						'footer.copy': '無為 / Wu Wei · bianwuwei',
+					},
+					en: {
+						'nav.works': 'Works',
+						'nav.about': 'About',
+						'nav.contact': 'Contact',
+						'nav.lang.zh': '中文',
+						'nav.lang.en': 'EN',
+						'hero.name': 'Wu Wei / 無為',
+						'hero.pitch': 'Useful software, grounded in real problems.',
+						'hero.bio':
+							'With hands-on experience in AI vision inspection, I’m bringing business-problem sense into my own software and tools.',
+						'hero.cta.primary': 'Talk about a problem',
+						'hero.cta.secondary': 'About me',
+						'hero.visual.caption': '無為 / WU WEI',
+						'works.label': 'Works',
+						'works.title': 'Works',
+						'works.note': 'Future projects will appear here.',
+						'about.label': 'About',
+						'about.title': 'About',
+						'about.body':
+							'Hands-on practice in AI vision inspection. I’m now carrying that problem sense into my own software and tools—building useful things from real needs.',
+						'contact.label': 'Contact',
+						'contact.title': 'Contact',
+						'contact.lead': 'Welcome practical problem discussions. Email first, or WeChat.',
+						'contact.email': 'Email',
+						'contact.wechat': 'WeChat',
+						'contact.github': 'GitHub',
+						'footer.top': 'Back to top',
+						'footer.copy': '無為 / Wu Wei · bianwuwei',
+					},
+				};
+
+				function currentLang() {
+					var d = document.documentElement.dataset.lang;
+					return d === 'en' ? 'en' : 'zh';
+				}
+
+				function apply(lang) {
+					var pack = dict[lang] || dict.zh;
+					document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+					document.documentElement.dataset.lang = lang;
+					document.querySelectorAll('[data-i18n]').forEach(function (el) {
+						var key = el.getAttribute('data-i18n');
+						if (key && pack[key] != null) el.textContent = pack[key];
+					});
+					document.querySelectorAll('[data-i18n-aria]').forEach(function (el) {
+						var key = el.getAttribute('data-i18n-aria');
+						if (key && pack[key] != null) el.setAttribute('aria-label', pack[key]);
+					});
+					document.querySelectorAll('[data-lang-btn]').forEach(function (btn) {
+						var active = btn.getAttribute('data-lang-btn') === lang;
+						btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+						btn.classList.toggle('is-active', active);
+					});
+					try {
+						localStorage.setItem('ww-lang', lang);
+					} catch (e) {}
+				}
+
+				document.addEventListener('click', function (e) {
+					var t = e.target;
+					if (!(t instanceof Element)) return;
+					var btn = t.closest('[data-lang-btn]');
+					if (!btn) return;
+					var next = btn.getAttribute('data-lang-btn');
+					if (next === 'zh' || next === 'en') apply(next);
+				});
+
+				apply(currentLang());
+			})();
+		</script>
 	</body>
 </html>
 
