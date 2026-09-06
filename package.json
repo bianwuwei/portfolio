@@ -2,7 +2,7 @@
   "name": "portfolio",
   "type": "module",
   "version": "1.0.0",
-  "description": "Wei Wu personal portfolio — product / shipping",
+  "description": "無為 / Wu Wei (bianwuwei) personal portfolio — builder & open source",
   "engines": {
     "node": ">=22.12.0"
   },

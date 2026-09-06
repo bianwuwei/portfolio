@@ -4,7 +4,10 @@ interface Props {
 	description?: string;
 }
 
-const { title = '吴小为 · Wei Wu — 产品人', description = '吴小为（Wei Wu）的个人作品集：关注产品设计、路线规划与交付落地。' } = Astro.props;
+const {
+	title = '無為 · Wu Wei — Builder & Open Source',
+	description = '無為（Wu Wei / bianwuwei）的个人站点：独立开发、开源与个人产品，在 GitHub 上公开交付。',
+} = Astro.props;
 const base = import.meta.env.BASE_URL;
 ---
 
@@ -14,7 +17,7 @@ const base = import.meta.env.BASE_URL;
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="description" content={description} />
-		<meta name="author" content="Wei Wu / 吴小为" />
+		<meta name="author" content="無為 / Wu Wei / bianwuwei" />
 		<meta name="theme-color" content="#0b0d10" />
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />

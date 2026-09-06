@@ -5,23 +5,23 @@
 	<div class="container about-grid">
 		<div>
 			<p class="section-label">关于我</p>
-			<h2 class="section-title">用产品思维连接用户与团队</h2>
+			<h2 class="section-title">重新出发：做自己的产品与开源</h2>
 			<p class="section-lead">
-				我是吴小为（Wei Wu），一名偏执行与落地的产品人。日常工作从用户访谈、竞品拆解，到需求排期、方案对齐与版本复盘。我相信好产品不是一次完美的设计稿，而是持续验证与迭代的结果。
+				我是無為（Wu Wei），GitHub <a href="https://github.com/bianwuwei" target="_blank" rel="noopener noreferrer">@bianwuwei</a>。正在开启一条独立开发路径：在公开仓库里学习、迭代，把个人产品与开源项目真正交付出去。曾在企业侧做过 AI 落地相关工作；现在更关注自己动手做、小步上线、与社区协作。
 			</p>
 		</div>
 		<div class="about-points">
 			<article class="card">
-				<h3>问题优先</h3>
-				<p>先把「为谁解决什么问题」说清楚，再谈功能与界面，避免过早陷入方案细节。</p>
+				<h3>公开交付</h3>
+				<p>软件优先落在 GitHub：文档、issue 与版本节奏可见，方便别人复用与反馈。</p>
 			</article>
 			<article class="card">
-				<h3>可交付的路线图</h3>
-				<p>把愿景拆成可验证的里程碑，明确取舍，让设计与研发在同一张地图上推进。</p>
+				<h3>边做边学</h3>
+				<p>不追求一次完美。用小版本验证假设，把踩坑与改进写进仓库，学习过程本身也是产品。</p>
 			</article>
 			<article class="card">
-				<h3>闭环反馈</h3>
-				<p>上线不是终点。通过数据与用户反馈快速迭代，把学习沉淀进下一轮决策。</p>
+				<h3>独立创业</h3>
+				<p>未来个人产品与工具会陆续出现在这个账号下——从想法到可安装、可使用的软件。</p>
 			</article>
 		</div>
 	</div>
@@ -42,6 +42,15 @@
 		.about-points {
 			grid-template-columns: repeat(3, 1fr);
 		}
+	}
+
+	.section-lead a {
+		color: var(--accent-strong);
+		font-weight: 600;
+	}
+
+	.section-lead a:hover {
+		text-decoration: underline;
 	}
 
 	.card h3 {

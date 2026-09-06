@@ -1,48 +1,62 @@
 ---
+const base = import.meta.env.BASE_URL;
 ---
 
 <section class="hero section" id="top">
 	<div class="container hero-grid">
 		<div>
-			<p class="section-label">Product · Shipping · Design</p>
-			<h1 class="hero-title">
-				你好，我是 <span>吴小为</span><br />
-				<span class="hero-en">Wei Wu</span>
-			</h1>
+			<p class="section-label">Builder · Open Source · Independent</p>
+			<div class="hero-identity">
+				<img
+					class="hero-avatar"
+					src={`${base}avatar.jpg`}
+					alt="無為 / Wu Wei"
+					width="112"
+					height="112"
+					decoding="async"
+				/>
+				<div>
+					<h1 class="hero-title">
+						<span>無為</span>
+						<span class="hero-en">Wu Wei</span>
+					</h1>
+					<p class="hero-handle">@bianwuwei</p>
+				</div>
+			</div>
 			<p class="hero-lead">
-				产品人。擅长把模糊需求拆成可落地的路线图，推动设计与工程对齐，把想法变成用户真正会用的产品。
+				独立开发者 / builder。在 GitHub 上公开交付个人产品与开源项目；对 AI 应用实验保持兴趣，专注把想法做成可用的软件。
 			</p>
 			<div class="hero-actions">
-				<a class="button" href="#works">查看作品</a>
+				<a class="button" href="#works">产品与开源</a>
 				<a class="button button-ghost" href="https://github.com/bianwuwei" target="_blank" rel="noopener noreferrer">
 					GitHub
 				</a>
 			</div>
 			<ul class="hero-meta" aria-label="关键词">
-				<li>产品设计</li>
-				<li>路线规划</li>
-				<li>交付落地</li>
+				<li>个人产品</li>
+				<li>开源</li>
+				<li>独立创业</li>
 			</ul>
 		</div>
 		<aside class="hero-panel" aria-label="定位卡片">
 			<div class="panel-card">
-				<p class="panel-kicker">当前关注</p>
-				<h2>从洞察到上线</h2>
+				<p class="panel-kicker">当前方向</p>
+				<h2>独立交付，公开学习</h2>
 				<p>
-					用清晰的问题定义、优先级与反馈闭环，帮助团队更快验证假设、减少返工，持续把价值交付给用户。
+					从零开始一条新的独立路径：小步发布、在公开仓库里迭代，把软件真正交到用户手里。
 				</p>
 				<div class="panel-stats">
 					<div>
-						<strong>B2B / ToC</strong>
-						<span>场景经验</span>
+						<strong>Ship on GitHub</strong>
+						<span>代码与产品都在这里</span>
 					</div>
 					<div>
-						<strong>0 → 1</strong>
-						<span>从想法到版本</span>
+						<strong>Learn in public</strong>
+						<span>过程可见，持续改进</span>
 					</div>
 					<div>
-						<strong>跨职能</strong>
-						<span>设计 · 研发 · 运营</span>
+						<strong>AI experiments</strong>
+						<span>应用层探索，不为企业清单</span>
 					</div>
 				</div>
 			</div>
@@ -68,25 +82,49 @@
 		}
 	}
 
+	.hero-identity {
+		display: flex;
+		align-items: center;
+		gap: 1.15rem;
+		margin-bottom: 1.1rem;
+	}
+
+	.hero-avatar {
+		width: 5.5rem;
+		height: 5.5rem;
+		border-radius: 50%;
+		object-fit: cover;
+		border: 2px solid rgba(245, 165, 36, 0.45);
+		box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+		flex-shrink: 0;
+	}
+
 	.hero-title {
-		margin: 0 0 1rem;
-		font-size: clamp(2.4rem, 7vw, 4rem);
+		margin: 0;
+		font-size: clamp(2.4rem, 7vw, 3.6rem);
 		line-height: 1.15;
 		letter-spacing: -0.03em;
 	}
 
-	.hero-title span {
+	.hero-title > span:first-child {
 		color: var(--accent-strong);
 	}
 
 	.hero-en {
-		display: inline-block;
-		margin-top: 0.35rem;
-		font-size: 0.45em;
+		display: block;
+		margin-top: 0.25rem;
+		font-size: 0.42em;
 		font-weight: 600;
-		letter-spacing: 0.08em;
+		letter-spacing: 0.1em;
 		text-transform: uppercase;
 		color: var(--text-muted) !important;
+	}
+
+	.hero-handle {
+		margin: 0.35rem 0 0;
+		color: var(--text-muted);
+		font-family: var(--font-mono);
+		font-size: 0.92rem;
 	}
 
 	.hero-lead {

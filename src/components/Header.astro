@@ -2,7 +2,7 @@
 const base = import.meta.env.BASE_URL;
 const links = [
 	{ href: '#about', label: '关于' },
-	{ href: '#works', label: '作品' },
+	{ href: '#works', label: '产品与开源' },
 	{ href: '#skills', label: '能力' },
 	{ href: '#contact', label: '联系' },
 ];
@@ -11,8 +11,8 @@ const links = [
 <header class="header">
 	<div class="container header-inner">
 		<a class="logo" href={base}>
-			<span class="logo-mark" aria-hidden="true">W</span>
-			<span class="logo-text">吴小为 <em>Wei Wu</em></span>
+			<span class="logo-mark" aria-hidden="true">無</span>
+			<span class="logo-text">無為 <em>Wu Wei</em></span>
 		</a>
 		<nav class="nav" aria-label="主导航">
 			{
@@ -21,7 +21,7 @@ const links = [
 				))
 			}
 		</nav>
-		<a class="button button-ghost header-cta" href="#contact">聊聊合作</a>
+		<a class="button button-ghost header-cta" href="#contact">Get in touch</a>
 	</div>
 </header>
 
@@ -59,6 +59,7 @@ const links = [
 		background: linear-gradient(135deg, var(--accent), #ff7a18);
 		color: #1a1205;
 		font-weight: 800;
+		font-size: 0.85rem;
 	}
 
 	.logo-text em {

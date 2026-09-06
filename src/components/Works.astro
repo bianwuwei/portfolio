@@ -1,45 +1,53 @@
 ---
 const projects = [
 	{
-		title: '协作看板 Pro',
-		description: '面向中小团队的任务与进度可视化工具，强调轻量排期与清晰的责任边界，帮助异步协作更少开会。',
-		tags: ['产品规划', 'B2B SaaS', '用户研究'],
-		link: 'https://github.com/bianwuwei',
-		linkLabel: 'GitHub',
+		title: '本站 · Portfolio',
+		status: 'Live',
+		description:
+			'这个个人站点本身：Astro + TypeScript，托管在 GitHub Pages。作为公开交付与品牌首页，后续个人产品与开源也会从这里链接出去。',
+		tags: ['Astro', 'TypeScript', 'GitHub Pages'],
+		links: [
+			{ href: 'https://github.com/bianwuwei/portfolio', label: '仓库' },
+			{ href: 'https://bianwuwei.github.io/portfolio/', label: '线上' },
+		],
 	},
 	{
-		title: '洞察笔记',
-		description: '把用户访谈与竞品观察沉淀成可检索的知识库，支持标签、结论摘要与评审材料一键导出。',
-		tags: ['信息架构', '内容产品', '设计系统'],
-		link: 'https://github.com/bianwuwei',
-		linkLabel: '项目主页',
+		title: '个人工具 / OSS（酝酿中）',
+		status: 'Coming soon',
+		description:
+			'计划开源的小工具与库：围绕日常开发与个人效率。尚在设计与原型阶段，明确标注为 brewing——不是已完成的 SaaS。',
+		tags: ['Open Source', 'Brewing', 'CLI / Lib'],
+		links: [{ href: 'https://github.com/bianwuwei', label: 'GitHub' }],
 	},
 	{
-		title: '发布节奏台',
-		description: '连接需求、设计与发布清单的内部工作台，减少跨职能沟通损耗，让每个版本都有清晰的「完成定义」。',
-		tags: ['内部工具', '流程设计', '交付落地'],
-		link: 'https://github.com/bianwuwei',
-		linkLabel: '查看仓库',
+		title: '独立产品（筹备中）',
+		status: 'Coming soon',
+		description:
+			'面向真实用户的个人产品雏形。会在 GitHub 公开进度与讨论；有兴趣一起做有意思的东西，欢迎通过联系方式找我。',
+		tags: ['Indie', 'Product', 'Early'],
+		links: [{ href: 'https://github.com/bianwuwei', label: '关注更新' }],
 	},
 ];
 ---
 
 <section class="section" id="works">
 	<div class="container">
-		<p class="section-label">精选作品</p>
-		<h2 class="section-title">近期在做 / 做过的事</h2>
+		<p class="section-label">产品与开源</p>
+		<h2 class="section-title">正在做 · 即将公开</h2>
 		<p class="section-lead">
-			以下为占位项目，用于展示作品结构与叙事方式。真实案例可替换为产品截图、指标与复盘链接。
+			当前以本站为起点；更多个人仓库与产品会陆续出现在
+			<a href="https://github.com/bianwuwei" target="_blank" rel="noopener noreferrer">github.com/bianwuwei</a>。
+			下方除本站外均为诚实占位（coming soon / brewing）。
 		</p>
 		<div class="grid-3 works">
 			{
 				projects.map((project) => (
 					<article class="card work-card">
 						<div class="work-top">
-							<h3>{project.title}</h3>
-							<a class="work-link" href={project.link} target="_blank" rel="noopener noreferrer">
-								{project.linkLabel} →
-							</a>
+							<div>
+								<p class="work-status">{project.status}</p>
+								<h3>{project.title}</h3>
+							</div>
 						</div>
 						<p>{project.description}</p>
 						<ul class="tag-list">
@@ -47,6 +55,13 @@ const projects = [
 								<li class="tag">{tag}</li>
 							))}
 						</ul>
+						<div class="work-links">
+							{project.links.map((link) => (
+								<a class="work-link" href={link.href} target="_blank" rel="noopener noreferrer">
+									{link.label} →
+								</a>
+							))}
+						</div>
 					</article>
 				))
 			}
@@ -59,6 +74,15 @@ const projects = [
 		margin-top: 2rem;
 	}
 
+	.section-lead a {
+		color: var(--accent-strong);
+		font-weight: 600;
+	}
+
+	.section-lead a:hover {
+		text-decoration: underline;
+	}
+
 	.work-card {
 		display: flex;
 		flex-direction: column;
@@ -66,11 +90,17 @@ const projects = [
 	}
 
 	.work-top {
-		display: flex;
-		align-items: flex-start;
-		justify-content: space-between;
-		gap: 0.75rem;
 		margin-bottom: 0.7rem;
+	}
+
+	.work-status {
+		margin: 0 0 0.35rem;
+		color: var(--accent-strong);
+		font-size: 0.78rem;
+		font-weight: 700;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+		font-family: var(--font-mono);
 	}
 
 	.work-card h3 {
@@ -78,16 +108,26 @@ const projects = [
 		font-size: 1.2rem;
 	}
 
+	.work-card > p {
+		margin: 0;
+		color: var(--text-muted);
+		flex: 1;
+	}
+
+	.work-links {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.85rem;
+		margin-top: 1rem;
+	}
+
 	.work-link {
-		flex-shrink: 0;
 		color: var(--accent-strong);
 		font-size: 0.88rem;
 		font-weight: 600;
 	}
 
-	.work-card > p {
-		margin: 0;
-		color: var(--text-muted);
-		flex: 1;
+	.work-link:hover {
+		text-decoration: underline;
 	}
 </style>
