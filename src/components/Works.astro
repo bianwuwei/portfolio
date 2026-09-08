@@ -5,7 +5,26 @@
 	<div class="container works">
 		<p class="section-label" data-i18n="works.label">作品</p>
 		<h2 class="section-title" data-i18n="works.title">作品</h2>
-		<p class="works-note" data-i18n="works.note">后续作品会在这里发布</p>
+		<p class="works-intro" data-i18n="works.intro">先从真实走过的路径写起，再慢慢加上软件。</p>
+
+		<article class="work-feature">
+			<p class="work-kicker" data-i18n="works.item1.kicker">手册 · 开源</p>
+			<h3 data-i18n="works.item1.title">Grok Bot 个人实战手册</h3>
+			<p data-i18n="works.item1.desc">
+				把建个人站、接 GitHub、定人设、改门面这些真实步骤写成可照着做的手册。不是功能大全，是一条能跑通的路径。
+			</p>
+			<a
+				class="work-link"
+				href="https://github.com/bianwuwei/grok-bot-playbook"
+				target="_blank"
+				rel="noopener noreferrer"
+				data-i18n="works.item1.cta"
+			>
+				在 GitHub 阅读 →
+			</a>
+		</article>
+
+		<p class="works-note" data-i18n="works.note">更多作品会陆续出现在这里。</p>
 	</div>
 </section>
 
@@ -14,11 +33,53 @@
 		max-width: 40rem;
 	}
 
-	.works-note {
-		margin: 1.25rem 0 0;
+	.works-intro {
+		margin: 0.85rem 0 1.75rem;
 		color: var(--text-muted);
 		font-size: 1.02rem;
-		border-left: 2px solid rgba(245, 165, 36, 0.35);
-		padding-left: 1rem;
+	}
+
+	.work-feature {
+		padding: 1.35rem 0 1.5rem;
+		border-top: 1px solid var(--border);
+		border-bottom: 1px solid var(--border);
+	}
+
+	.work-kicker {
+		margin: 0 0 0.45rem;
+		color: var(--accent-strong);
+		font-size: 0.8rem;
+		font-weight: 600;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+	}
+
+	.work-feature h3 {
+		margin: 0 0 0.7rem;
+		font-size: clamp(1.25rem, 3vw, 1.55rem);
+		letter-spacing: -0.02em;
+	}
+
+	.work-feature > p {
+		margin: 0 0 1rem;
+		color: var(--text-muted);
+		font-size: 1rem;
+		line-height: 1.75;
+	}
+
+	.work-link {
+		color: var(--accent-strong);
+		font-weight: 600;
+		font-size: 0.95rem;
+	}
+
+	.work-link:hover {
+		text-decoration: underline;
+	}
+
+	.works-note {
+		margin: 1.35rem 0 0;
+		color: var(--text-muted);
+		font-size: 0.95rem;
 	}
 </style>
